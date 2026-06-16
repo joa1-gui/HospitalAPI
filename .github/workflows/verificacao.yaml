@@ -1,26 +1,26 @@
 name: Esteira de Validacao Java
 
 on:
-push:
-branches:
-- main
+  push:
+    branches:
+      - main
 
 jobs:
-validar:
-runs-on: ubuntu-latest
+  validar:
+    runs-on: ubuntu-latest
 
-steps:
-- name: Baixando codigo
-uses: actions/checkout@v4
+    steps:
+      - name: Baixando codigo
+        uses: actions/checkout@v4
 
-- name: Instalando Java
-uses: actions/setup-java@v4
-with:
-distribution: 'temurin'
-java-version: '17'
+      - name: Instalando Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
-- name: Compilando Sistema
-run: javac Validador.java
+      - name: Compilando Sistema
+        run: javac Validador.java
 
-- name: Executando Sistema
-run: java Validador
+      - name: Executando Sistema
+        run: java Validador
